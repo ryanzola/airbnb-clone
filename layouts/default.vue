@@ -1,8 +1,22 @@
 <template>
-  <div>
-    <header style="background-color: #eee">
-      <nuxt-link to="/">Home</nuxt-link>
-      <input type="text" ref="citySearch" @changed="changed">
+  <div class="app">
+    <header class="app-header">
+      <div class="app-logo">
+        <img src="/images/logo.svg" alt="nuxt bnb logo">
+      </div>
+      <div class="app-search">
+        <input type="text" ref="citySearch" @changed="changed" placeholder="Enter your address">
+        <input type="text" class="datepicker" placeholder="Check in">
+        <input type="text" class="datepicker" placeholder="Check out">
+        <button>
+          <img src="/images/icons/search.svg" alt="search for places">
+        </button>
+      </div>
+      <div class="app-user-menu">
+        <img src="/images/icons/house.svg" alt="a house">
+        <div class="name">Host</div>
+        <img class="avatar" src="/images/user.jpg" alt="host">
+      </div>
     </header>
     <nuxt/>
   </div>

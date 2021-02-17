@@ -14,7 +14,18 @@ export default {
       }
     ],
   },
+  build: {
+    extractCSS: true,
+    loaders: {
+      limit: 0,
+    }
+  },
+  css: ['~/assets/sass/app.scss'],
   plugins: ['~/plugins/maps.client', '~/plugins/dataApi'],
   modules: [],
-  buildModules: ['@nuxtjs/tailwindcss']
+  buildModules: ['@nuxtjs/tailwindcss'],
+  publicRuntimeConfig: {
+  },
+  privateRuntimeConfig: {
+  }
 }
