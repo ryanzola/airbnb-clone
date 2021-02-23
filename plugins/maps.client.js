@@ -2,7 +2,7 @@ export default function(context, inject){
   let isLoaded = false;
   let waiting = []
 
-  
+  window.initGoogleMaps = init
   addScript();
   inject('maps', {
     showMap,
@@ -13,11 +13,10 @@ export default function(context, inject){
     const script = document.createElement('script');
     script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCqRSh_3uwGZ9KXs73t0jbEm4auClvJSIA&libraries=places&callback=initGoogleMaps";
     script.async = true;
-    window.initGoogleMaps = initGoogleMaps
     document.head.appendChild(script);
   }
 
-  function initGoogleMaps() {
+  function init() {
     isLoaded = true;
 
     waiting.forEach(item => {

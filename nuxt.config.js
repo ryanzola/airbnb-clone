@@ -21,10 +21,14 @@ export default {
     }
   },
   css: ['~/assets/sass/app.scss'],
-  plugins: ['~/plugins/maps.client', '~/plugins/dataApi'],
+  plugins: ['~/plugins/maps.client', '~/plugins/dataApi', '~/plugins/auth.client'],
   modules: [],
   buildModules: ['@nuxtjs/tailwindcss'],
   publicRuntimeConfig: {
+    auth: {
+      cookieName: 'idToken',
+      clientId: '508242901875-ibctftuvnti3q2v7bgem2viubjvvhgt4.apps.googleusercontent.com'
+    },
   },
   privateRuntimeConfig: {
   }

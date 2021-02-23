@@ -6,6 +6,7 @@
     "start": "nuxt start"
   },
   "dependencies": {
+    "js-cookie": "^2.2.1",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
