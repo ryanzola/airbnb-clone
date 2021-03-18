@@ -22,14 +22,23 @@ export default {
   },
   css: ['~/assets/sass/app.scss'],
   plugins: ['~/plugins/maps.client', '~/plugins/dataApi', '~/plugins/auth.client'],
-  modules: [],
+  modules: ['~/modules/auth', '~/modules/algolia'],
   buildModules: ['@nuxtjs/tailwindcss'],
   publicRuntimeConfig: {
     auth: {
       cookieName: 'idToken',
       clientId: '508242901875-ibctftuvnti3q2v7bgem2viubjvvhgt4.apps.googleusercontent.com'
     },
+    algolia: {
+      appId: 'ZYTJI836W0',
+      key: 'd098b6d1a118b5c6af424db84a43b747'
+    }
   },
   privateRuntimeConfig: {
-  }
+    algolia: {
+      appId: 'ZYTJI836W0',
+      key: '95953fbb181a98dbfe02be221a8269fd'
+    }
+  },
+  serverMiddleware: []
 }
