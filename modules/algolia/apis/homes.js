@@ -6,6 +6,16 @@ export default (algoliaConfig) => {
   const headers = getHeaders(algoliaConfig);
 
   return {
+    delete: async (homeId, payload) => {
+      try {
+        return unwrap(await fetch(`https://${algoliaConfig.appId}-dsn.algolia.net/1/indexes/homes/${homeId}`, { 
+          headers,
+          method: 'DELETE',
+        }))
+      } catch(error) {
+        getErrorResponse(error)
+      }
+    },
     create: async (homeId, payload) => {
       try {
         const availability = [];
@@ -26,16 +36,6 @@ export default (algoliaConfig) => {
           headers,
           method: 'PUT',
           body: JSON.stringify(payload)
-        }))
-      } catch(error) {
-        getErrorResponse(error)
-      }
-    },
-    delete: async (homeId, payload) => {
-      try {
-        return unwrap(await fetch(`https://${algoliaConfig.appId}-dsn.algolia.net/1/indexes/homes/${homeId}`, { 
-          headers,
-          method: 'DELETE',
         }))
       } catch(error) {
         getErrorResponse(error)
