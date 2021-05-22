@@ -1,12 +1,21 @@
 import fetch from 'node-fetch'
 import { unwrap, getErrorResponse } from '../../../utils/fetchUtils'
-import { getHeaders } from '../helpers';
+import { getHeaders } from '../../helpers';
 
 export default (algoliaConfig) => {
   const headers = getHeaders(algoliaConfig);
 
   return {
-    delete: async (homeId, payload) => {
+    get: async (homeId) => {
+      try {
+        return unwrap(await fetch(`https://${algoliaConfig.appId}-dsn.algolia.net/1/indexes/homes/${homeId}`, { 
+          headers,
+        }))
+      } catch(error) {
+        getErrorResponse(error)
+      }
+    },
+    delete: async (homeId) => {
       try {
         return unwrap(await fetch(`https://${algoliaConfig.appId}-dsn.algolia.net/1/indexes/homes/${homeId}`, { 
           headers,

@@ -43,6 +43,9 @@ export default {
     },
     cloudinary: {
       apiKey: '615322752127134'
+    },
+    stripe: {
+      key: 'pk_test_51ItjzqI7ApVrnIHPmXfFDx0haM0MWWP6vAPdyfxlS7vTpZK7AZKzwu5KMM2VhYX1oCPr2G3VX4XC9BHTWlDrw4Q100gh6s3cz1'
     }
   },
   privateRuntimeConfig: {
@@ -52,6 +55,9 @@ export default {
     },
     cloudinary: {
       apiSecret: 'XJoZlhlcyk19v0xG1U4zXOFlfCI',
+    },
+    stripe: {
+      secretKey: process.env.STRIPE_SECRET_KET
     }
   },
   serverMiddleware: []
