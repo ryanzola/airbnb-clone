@@ -29,9 +29,24 @@ export default {
       baseURL: 'https://res.cloudinary.com/dcyptv7rx/image/upload/'
     }
   },
-  plugins: ['~/plugins/maps.client', '~/plugins/dataApi', '~/plugins/auth.client', '~/plugins/v-calendar.client'],
-  modules: ['~/modules/auth', '~/modules/algolia', '~/modules/cloudinary', '@nuxtjs/cloudinary'],
-  buildModules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
+  plugins: [
+    '~/plugins/maps.client',
+    '~/plugins/dataApi',
+    '~/plugins/auth.client',
+    '~/plugins/v-calendar.client',
+    '~/plugins/stripe.client'
+  ],
+  modules: [
+    '~/modules/auth',
+    '~/modules/algolia',
+    '~/modules/cloudinary',
+    '~/modules/stripe',
+    '@nuxtjs/cloudinary'
+  ],
+  buildModules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image'
+  ],
   publicRuntimeConfig: {
     auth: {
       cookieName: 'idToken',
@@ -57,7 +72,7 @@ export default {
       apiSecret: 'XJoZlhlcyk19v0xG1U4zXOFlfCI',
     },
     stripe: {
-      secretKey: process.env.STRIPE_SECRET_KET
+      secretKey: process.env.STRIPE_SECRET_KEY
     }
   },
   serverMiddleware: []
