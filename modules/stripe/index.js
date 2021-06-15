@@ -16,9 +16,9 @@ export default function() {
 
   this.nuxt.hook('render:setupMiddleware', (app) => {
     app.use('/hooks/stripe', async(req, res, next) => {
-      const { identityId, homeId, start, end } = req.body.data.object.metadata
-      await apis.bookHome(identityId, homeId, start, end)
-      res.end(`${identityId} booked ${homeId}!!!!`)
+      const meta = req.body.data.object.metadata
+      await apis.bookHome(meda.identityId, meta.homeId, meta.start, meta.end)
+      res.end(`${meta.identityId} booked ${meta.homeId}!!!!`)
     });
   })
 
