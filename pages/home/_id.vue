@@ -60,7 +60,7 @@ export default {
         },
         "aggregateRating": {
           "@type": "AggregateRating",
-          "rating": this.home.reviewValue,
+          "ratingValue": this.home.reviewValue,
           "reviewCount": this.home.reviewCount
         }
       })
