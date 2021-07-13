@@ -1,5 +1,4 @@
 export default {
-  rootUrl: process.env.NODE_ENV === 'production' ? 'https://airbnb-clone-ochre.vercel.app' : 'http://localhost:3000',
   components: true,
   head: {
     titleTemplate: "Mastering Nuxt - %s",
@@ -49,6 +48,7 @@ export default {
     '@nuxt/image'
   ],
   publicRuntimeConfig: {
+    rootUrl: process.env.NODE_ENV === 'production' ? 'https://airbnb-clone-ochre.vercel.app' : 'http://localhost:3000',
     auth: {
       cookieName: 'idToken',
       clientId: '508242901875-ibctftuvnti3q2v7bgem2viubjvvhgt4.apps.googleusercontent.com'
